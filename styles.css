@@ -39,6 +39,9 @@ h3 {
     height: 30px;
     cursor: pointer;
     z-index: 1000;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .hamburger span {
@@ -552,4 +555,67 @@ footer a {
 footer a:hover {
     color: var(--ivory);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Testimonial Section */
+#testimonials {
+    background-color: var(--ivory);
+    /* Or a slightly different shade if desired */
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 300px;
+    /* Reserve space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+    pointer-events: none;
+    padding: 20px;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--charcoal);
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.testimonial-slide h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.role {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--brown);
+    font-weight: 400;
 }

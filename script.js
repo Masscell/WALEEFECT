@@ -8,7 +8,7 @@ function closeMenu() {
 }
 
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset > 50;
+    const scrolled = window.scrollY > 50;
     document.getElementById('logo').classList.toggle('scrolled', scrolled);
     document.getElementById('hamburger').classList.toggle('scrolled', scrolled);
 });
@@ -51,4 +51,16 @@ if (slides.length > 0) {
         slideIndex = (slideIndex + 1) % slides.length;
         slides[slideIndex].classList.add('active');
     }, 6000); // Change slide every 6 seconds
+}
+
+// Testimonial Slider Animation
+const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+let testimonialIndex = 0;
+
+if (testimonialSlides.length > 0) {
+    setInterval(() => {
+        testimonialSlides[testimonialIndex].classList.remove('active');
+        testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+        testimonialSlides[testimonialIndex].classList.add('active');
+    }, 5000); // Change testimonial every 5 seconds
 }
